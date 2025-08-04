@@ -1,3 +1,4 @@
+import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -9,13 +10,14 @@ from PIL import Image
 # for prod
 from brain_tumor_classification.cnn.cnn_model import CNNModel
 
-
 # labels
 classes = ['glioma', 'meningioma', 'notumor', 'pituitary']
 
 # load model
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "cnn_brain_tumor_classification_v1.pth")
 model = CNNModel()
-checkpoint = torch.load('cnn_brain_tumor_classification_v1.pth', map_location=torch.device('cpu'))
+checkpoint = torch.load(MODEL_PATH, map_location=torch.device('cpu'))
 model.load_state_dict(checkpoint['model_state_dict'])
 model.eval()
 
