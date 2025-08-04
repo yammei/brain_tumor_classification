@@ -21,7 +21,7 @@ transform = transforms.Compose([
     transforms.Normalize((0.5,), (0.5,))
 ])
 
-def predict_image(image_path):
+def predict_image(image_path: str) -> tuple:
     image = Image.open(image_path).convert('RGB')
     # batch size
     img_tensor = transform(image).unsqueeze(0)
@@ -40,13 +40,12 @@ def predict_image(image_path):
 
     return classes[class_idx], probabilities[0].tolist()
 
-if __name__ == "__main__":
-    input_to_classification_map = {
-        '1': 'glioma',
-        '2': 'meningioma',
-        '3': 'pituitary',
-        '4': 'notumor'
-    }
-    prompt = f"please enter which type to classify:\n1 - glioma\n2 - mengioma\n3 - pituitary\n4 - no tumor\n"
-    img_path = f"showcase_images/test_image_{input_to_classification_map[str(input(prompt))]}.jpg"
-    predict_image(img_path)
+# input_to_classification_map = {
+#     '1': 'glioma',
+#     '2': 'meningioma',
+#     '3': 'pituitary',
+#     '4': 'notumor'
+# }
+# prompt = f"please enter which type to classify:\n1 - glioma\n2 - mengioma\n3 - pituitary\n4 - no tumor\n"
+# img_path = f"showcase_images/test_image_{input_to_classification_map[str(input(prompt))]}.jpg"
+# predict_image(img_path)
