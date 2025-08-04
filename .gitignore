@@ -29,22 +29,24 @@ logs/
 # Data and datasets
 data/
 datasets/
+Testing/*
+Training/*
 *.zip
 *.tar.gz
 *.h5
 *.csv
 
 # Model checkpoints and weights
-*.pth
-*.pt
-checkpoints/
-saved_models/
+# *.pth
+# *.pt
+# checkpoints/
+# saved_models/
 
 # Training artifacts
 runs/
 tensorboard/
 outputs/
-training_loss.png
+# training_loss.png
 
 # Environment/config files
 .env
