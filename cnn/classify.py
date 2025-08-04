@@ -4,7 +4,11 @@ import torch.nn.functional as F
 from torchvision import transforms
 from PIL import Image
 
-from cnn_model import CNNModel
+# for dev
+# from cnn_model import CNNModel
+# for prod
+from brain_tumor_classification.cnn.cnn_model import CNNModel
+
 
 # labels
 classes = ['glioma', 'meningioma', 'notumor', 'pituitary']
