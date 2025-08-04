@@ -1,0 +1,58 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python-specific
+*.pyo
+*.pyd
+*.so
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs and outputs
+*.log
+logs/
+*.out
+
+# Data and datasets
+data/
+datasets/
+*.zip
+*.tar.gz
+*.h5
+*.csv
+
+# Model checkpoints and weights
+*.pth
+*.pt
+checkpoints/
+saved_models/
+
+# Training artifacts
+runs/
+tensorboard/
+outputs/
+training_loss.png
+
+# Environment/config files
+.env
+*.ini
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.swp
